@@ -36,7 +36,7 @@ def action():
 
     print(strings.UPDATE_INFO_URLS)
 
-    logfile = shared.get_logfile()
+    logfile = shared.get_readinglogfile() # mkp - use reading list log file instead of general log file
 
     works = []
     for fic in tqdm(fics):
@@ -59,9 +59,9 @@ def action():
 
     print(strings.UPDATE_INFO_DOWNLOADING)
 
-    fileio.make_dir(strings.DOWNLOADS_FOLDER_NAME)
+    fileio.make_dir(strings.READING_LIST_FOLDER_NAME) # mkp - use reading list downloads folder instead of general downloads folder
 
     for work in tqdm(works_cleaned):
-        ao3.update(work['link'], download_filetypes, strings.DOWNLOADS_FOLDER_NAME, logfile, session, work['chapters'], images)
+        ao3.update(work['link'], download_filetypes, strings.READING_LIST_FOLDER_NAME, logfile, session, work['chapters'], images) # mkp - use reading list downloads folder instead of general downloads folder
 
     session.close()

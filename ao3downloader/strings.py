@@ -1,13 +1,22 @@
+# START mkp script config - note: you MUST update these URLs prior to using the script
+READING_LIST_URL_NAME = 'https://archiveofourown.org/users/shamelessly_mkp/readings?show=to-read'
+BOOKMARKS_URL_NAME = 'https://archiveofourown.org/users/shamelessly_mkp/bookmarks'
+SUBSCRIPTIONS_URL_NAME = 'https://archiveofourown.org/users/shamelessly_mkp/subscriptions'
+# END mkp script config
+
 # region file ops
 
 DOWNLOAD_FOLDER_NAME = 'downloads'
+READING_LIST_FOLDER_NAME = 'reading list' # mkp - add reading list folder
 IMAGE_FOLDER_NAME = 'images'
 HTML_FOLDER_NAME = 'html'
 LOG_FOLDER_NAME = 'logs'
 LOG_FILE_NAME = 'log.jsonl'
+READINGLOG_FILE_NAME = 'readinglist_log.jsonl' # mkp - add reading list log file
 SETTINGS_FILE_NAME = 'settings.json'
 TEMPLATE_FILE_NAME = 'template.html'
 VISUALIZATION_FILE_NAME = 'logvisualization.html'
+READINGLOG_VISUALIZATION_FILE_NAME = 'readinglogvisualization.html' # mkp - add reading list visualization of log file
 
 SETTING_USERNAME = 'username'
 SETTING_PASSWORD = 'password'
@@ -29,9 +38,14 @@ PROMPT_INVALID_ACTION = 'please choose a valid action'
 # for action description changes be sure to update readme
 ACTION_DESCRIPTION_DISPLAY_MENU = 'display menu'
 ACTION_DESCRIPTION_AO3 = 'download from ao3 link'
+ACTION_DESCRIPTION_READINGLIST = 'download ao3 fics marked for later' # mkp - add reading list action description
+ACTION_DESCRIPTION_BOOKMARKS = 'download bookmarks from ao3' # mkp - add bookmarks action description
+ACTION_DESCRIPTION_SUBSCRIPTIONS = 'download subscriptions from ao3' # mkp - add subscriptions action description
 ACTION_DESCRIPTION_UPDATE = 'download latest version of incomplete fics'
+ACTION_DESCRIPTION_UPDATE_READINGLIST = 'download latest version of incomplete fics marked for later' # mkp - add update reading list action description
 ACTION_DESCRIPTION_PINBOARD = 'download bookmarks from pinboard'
 ACTION_DESCRIPTION_VISUALIZATION = 'convert logfile into interactable html'
+ACTION_DESCRIPTION_READINGLOG_VISUALIZATION = 'convert reading list logfile into interactable html' # mkp - add virtualization action description
 ACTION_DESCRIPTION_REDOWNLOAD = 're-download fics saved in one format in a different format'
 ACTION_DESCRIPTION_UPDATE_SERIES = 'download missing fics from series'
 ACTION_DESCRIPTION_LINKS_ONLY = 'get all work links from an ao3 listing (saves links only)'
@@ -70,13 +84,11 @@ UPDATE_ACCEPTABLE_FILE_TYPES = ['AZW3', 'EPUB', 'MOBI', 'PDF', 'HTML']
 UPDATE_PROMPT_USE_SAVED_FILE_TYPES = 'use saved list of file types to check for updates? ({}/{})'.format(PROMPT_YES, PROMPT_NO)
 UPDATE_PROMPT_FILE_TYPE = 'please enter the file type of the files you would like to check for updates. choose from the following (case-sensitive):\n' + '\n'.join(UPDATE_ACCEPTABLE_FILE_TYPES)
 UPDATE_INFO_FILE_TYPE = 'added {} to list of file types to check for updates'
-UPDATE_INFO_FILTER = 'filtering out works that could not be downloaded on previous runs'
 
 SERIES_INFO_FILES = 'getting list of works belonging to series'
 SERIES_INFO_URLS = 'finding all series urls'
 SERIES_INFO_NUM = '{} series found'
 SERIES_INFO_DOWNLOADING = 'downloading works missing from series'
-SERIES_INFO_FILTER = 'filtering out series that could not be downloaded on previous runs'
 
 REDOWNLOAD_PROMPT_FOLDER = 'please enter the folder containing the files you want to re-download (also checks subfolders):'
 REDOWNLOAD_PROMPT_FILE_TYPE = 'please enter file type you want to convert from. choose from the following (case sensitive):\n' + '\n'.join(UPDATE_ACCEPTABLE_FILE_TYPES)
