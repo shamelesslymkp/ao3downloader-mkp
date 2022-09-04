@@ -1,14 +1,14 @@
-## What is this?
+## What is this? -nianeyna
 This is a program intended to help you download fanfiction from the [Archive of Our Own](https://archiveofourown.org/) in bulk. This program is primarily intended to work with links to the Archive of Our Own itself, but has a secondary function of downloading any [Pinboard](https://pinboard.in/) bookmarks that link to the Archive of Our Own. You can ignore the Pinboard functionality if you don't know what Pinboard is or don't use Pinboard.
 
 ** mkp addendnum:
 This is a modified version of nianeyna's original program, adapted by mkp (shamelesslymkp.tumblr.com). It provides some additional functionality - most notably, the ability to download marked for later items into an entirely separate downloads folder. The additional functionality required the creation of multiple additional scripts (well. the copying-and-adaptation of existing scripts, anyways. it's kind of like creation.) and some additions and modifications to the original scripts. Additional details about these changes have been added to the appropriate sections of this readme file and additions/changes to the original files have been marked with comments throughout.
 
-## Announcements
+## Announcements -nianeyna
 
 As of March 8, 2022 I have changed how file names are generated to allow for the inclusion of non-alphanumeric characters (cnovel fans rejoice). If you have a Process going on which relies on file names for the same fic being the same, please take note of this if/when you download the new version of the code.
 
-## Instructions
+## Instructions -nianeyna
 
 - install python [version 3.9.9](https://www.python.org/downloads/release/python-399/)
     - as of the time of writing, any version of python that was released *after* version 3.9.9 or *before* 3.9.0 WILL NOT work with this script. MAKE SURE you are using a version of python between 3.9.0 and 3.9.9. To check which version of python you have installed:
@@ -37,7 +37,7 @@ As of March 8, 2022 I have changed how file names are generated to allow for the
     - note that if you delete the "venv" folder for any reason you will need to do the initial setup again.
 - other platforms: ao3downloader should work on any platform that supports python, however, you will need to do your own research into how to run python programs on your system.
 
-## Menu Options Explanation
+## Menu Options Explanation -nianeyna
 
 - **'download from ao3 link<!--ACTION_DESCRIPTION_AO3-->'** - this works for most links to [ao3](https://archiveofourown.org/). for example, you can use this to download a single work, a series, or any ao3 page that contains links to works or series (such as your bookmarks or an author's works). the program will download multiple pages automatically without the need to enter the next page link manually.
 *added by mkp* - **'download ao3 fics marked for later<!--ACTION_DESCRIPTION_READINGLIST-->'** - this option is a modification of the original download from ao3 link action and has a pre-defined URL to check that MUST be manually configured by editing the strings.py file. by default, it automatically downloads fics marked for later into a separate downloads folder named 'reading list'.
@@ -52,7 +52,7 @@ As of March 8, 2022 I have changed how file names are generated to allow for the
 - **'convert logfile into interactable html<!--ACTION_DESCRIPTION_VISUALIZATION-->'** - all downloads from ao3 (and some other actions) are logged in a file called log.jsonl<!--LOG_FILE_NAME--> in the 'logs<!--LOG_FOLDER_NAME-->' folder (if this folder does not exist it means no logs have been generated yet), along with information such as whether or not the download was successful, details about errors encountered, and so on. this option converts log.jsonl<!--LOG_FILE_NAME--> into a much more human-readable, searchable and sortable (click on the column headers to sort) html file that can be opened in any browser. the file is called 'logvisualization.html<!--VISUALIZATION_FILE_NAME-->' and is saved in the same place as log.jsonl<!--LOG_FILE_NAME-->.
 *added by mkp* - **'convert reading list logfile into interactable html<!--ACTION_DESCRIPTION_READINGLOG_VISUALIZATION-->'** - converts the reading list logfile into a more human-readable format.
 
-## Notes
+## Notes -nianeyna
 
 - **The purpose of entering your ao3 login information** is to download archive-locked works or anything else that is not visible when you are not logged in. If you don't care about that, there is no need to enter your login information.
 - **Try to keep your ao3 browsing to a minimum** while the script is running. It won't break anything, but it may cause you to hit ao3's limit on how many hits to the site you are allowed within a certain time frame. This limit is per user, or per IP if you are not logged in. If this happens, the script will pause for 5 minutes to let the limit reset, and you may see a "Retry later" message when you try to open an ao3 page during that time. Don't be alarmed by this, just wait it out.
@@ -71,7 +71,7 @@ As of March 8, 2022 I have changed how file names are generated to allow for the
 - **When checking for incomplete fics,** the code makes certain assumptions about how fic files are formatted. I have tried to make this logic as flexible as possible, but there is still some possibility that not all incomplete fics will be properly identified by the updater, especially if the files are old (since ao3 may have made changes to how they format fics for download over time) or have been edited.
 - **IMPORTANT**: some of your input choices are saved in settings.json<!--SETTINGS_FILE_NAME-->. In some cases you will not be able to change these choices unless you clear your settings by deleting settings.json<!--SETTINGS_FILE_NAME--> (or editing it, if you are comfortable with json). In addition, please note that saved settings include passwords and keys and are saved in plain text. **Use appropriate caution with this file.**
 
-## Troubleshooting
+## Troubleshooting -nianeyna
 - If you are able to create logvisualization.html<!--VISUALIZATION_FILE_NAME--> (menu option 'v'), take a look through the logs to see if there are any helpful error messages.
 - If there are no logs or the logs are unhelpful, look for a folder called "venv" inside the repository. Delete "venv" and try re-running the script.
 - If deleting venv doesn't work, try deleting the entire repository and re-downloading from github (but remember to save your existing downloads if you have any!)
@@ -81,7 +81,7 @@ As of March 8, 2022 I have changed how file names are generated to allow for the
 - If reinstalling python doesn't work, [see this stackoverflow answer](https://stackoverflow.com/a/58773979).
 - If you have tried all of the above and it still doesn't work, see below for how to send me a bug report.
 
-## Questions? Comments? Bug reports?
+## Questions? Comments? Bug reports? -nianeyna
 Feel free to head over to [the discussion board](https://github.com/nianeyna/ao3downloader/discussions) and make a post, or create an [issue](https://github.com/nianeyna/ao3downloader/issues). You can also email me at nianeyna@gmail.com if you prefer. Please include "ao3downloader" in the subject line of emails about the downloader. If you are reporting a bug, please describe exactly what you did to make the bug happen to the best of your ability. (More is more! Be as detailed as possible.)
 
 (Please note that while I will absolutely do my best to get back to you, I can't make any promises - I have a job, etc.)
