@@ -7,6 +7,7 @@ import ao3downloader.actions.shared as shared
 import ao3downloader.ao3 as ao3
 import ao3downloader.fileio as fileio
 import ao3downloader.strings as strings
+import ao3downloader.urls as urls
 
 
 def action():
@@ -36,7 +37,7 @@ def action():
     except Exception as e:
         fileio.write_log(logfile, {'error': str(e), 'message': strings.ERROR_LOG_FILE, 'stacktrace': traceback.format_exc()})
 
-    link = strings.READING_LIST_URL_NAME # mkp - automatically use reading list url
+    link = urls.readinglist_url # mkp - automatically use reading list url
     if latest:
         print(strings.AO3_PROMPT_LAST_PAGE)
         if input() == strings.PROMPT_YES:
